@@ -1,26 +1,26 @@
+@import url('https://fonts.cdnfonts.com/css/typographertextur');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-    font-family: "Ancient";
-    src: url("/lib/fonts/Ancient\ Modern\ Tales.otf");
+	font-family: 'ancient';
+	src: url('./lib/fonts/Ancient.otf');
 }
-
 @layer base {
-    * {
+	* {
 		/* @apply font-inclusive-sans; */
 		@apply text-stone-200;
 		@apply caret-red-950;
 	}
-	html, body{
-		height: 100vh
+	html,
+	body {
+		height: 100vh;
 	}
 	body {
 		@apply bg-zinc-800;
-
 	}
-	::selection{
+	::selection {
 		@apply bg-red-600;
 		@apply text-stone-200;
 	}

@@ -4,8 +4,8 @@ import DM from '$lib/assets/DM.svg'
 import player from '$lib/assets/player.svg'
 </script>
 
-<div class="m-auto w-3/4 text-center h-screen">
-    <h1 class=" text-7xl font-ancient mb-10">Como você vai jogar hoje?</h1>
+<div class="m-auto w-3/4 text-center h-screen overflow-hidden">
+    <h1 class=" text-7xl font-ancient mb-10 mt-5">Como você vai jogar hoje?</h1>
 
     <div class="w-full grid grid-cols-2 place-items-center">
         <div class="flex justify-evenly flex-row">

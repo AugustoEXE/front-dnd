@@ -3,7 +3,7 @@
 	import Account from 'svelte-material-icons/Account.svelte';
 	import Lock from 'svelte-material-icons/Lock.svelte';
 	import Login from 'svelte-material-icons/Login.svelte';
-	import ErrorToast from '../../components/ErrorToast.svelte';
+	import ErrorToast from '../../components/toasts/ErrorToast.svelte';
 
 	let login: string;
 	let password: string;

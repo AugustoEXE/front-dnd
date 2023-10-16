@@ -3,10 +3,12 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {}
+    extend: {},
+    fontFamily:{
+      "old" : ['"TypographerTextur"', 'sans-serif'],
+      "ancient" : ['"ancient"', 'sans-serif'],
+    },
   },
-  fontFamily:{
-    ancient : ['Ancient', 'sans-serif']
-  },
+  
   plugins: []
 };
