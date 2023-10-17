@@ -13,6 +13,9 @@
 		@apply text-stone-200;
 		@apply caret-red-950;
 	}
+	fieldset{
+		border: solid, 1px;
+	}
 	html,
 	body {
 		height: 100vh;
