@@ -4,23 +4,25 @@
 	import Lock from 'svelte-material-icons/Lock.svelte';
 	import Login from 'svelte-material-icons/Login.svelte';
 	import ErrorToast from '../../components/toasts/ErrorToast.svelte';
+	import axios from 'axios';
+	let login: string, password: string, accept: boolean, error: string, visible: boolean;
 
-	let login: string;
-	let password: string;
-	let accept: boolean;
-	let error: string;
-	let visible: boolean;
-	function handleSubmmit(): void {
+	async function handleSubmmit(): Promise<void> {
 		if (accept) {
 			const loginData = {
-				login,
-				password,
-				accept
+				email: login,
+				password
 			};
-			console.table(loginData);
-			window.location.replace('/home');
+
+			try {
+				const userData = await axios.post('http://localhost:8000/login', loginData);
+				axios.defaults.headers.common['Authorization'] = `Bearer ${userData.data.authorization.token}`
+				window.location.replace('/home');
+			} catch (e) {
+				error = 'erro no login';
+				visible = true;
+			}
 		} else {
-			console.info('woejfbwef');
 			error = 'É necessario aceitar os termos de serviço e privacidade';
 			visible = true;
 		}

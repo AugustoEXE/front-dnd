@@ -2,6 +2,13 @@
 	import { onMount } from 'svelte';
 	import '../../../app.css';
 	import Input from '../../../components/form/input.svelte';
+	import axios from 'axios';
+
+	
+	const damageTypes = axios.get('http://localhost:8000/damage-types');
+	
+	console.log(damageTypes);
+
 
 </script>
 
@@ -39,7 +46,7 @@
 			<div class="col-span-2 grid">
 				<label for="" class=" text-left">Tipo de dano </label>
 				<select
-					class="h-10 bg-stone-200 rounded p-2 border-2 border-zinc-900 text-zinc-950"
+					class="h-10 bg-neutral-700 rounded p-2 border-2 border-zinc-900 text-stone-200"
 					name="tipo"
 					id=""
 				>
@@ -55,7 +62,7 @@
 			<div class="col-span-2 grid">
 				<label for="" class=" text-left">Truque: </label>
 				<select
-					class="h-10 bg-stone-200 rounded p-2 border-2 border-zinc-900 text-zinc-950"
+					class="h-10 text-stone-200 bg-neutral-700 rounded p-2 border-2 border-zinc-900 "
 					name="tipo"
 					id=""
 				>

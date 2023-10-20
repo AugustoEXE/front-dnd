@@ -9,7 +9,7 @@
 <label for="" class=" text-left">{name}: </label>
 <input
 	type="{type}"
-	class=" h-10 bg-stone-200 rounded p-2 border-2 border-zinc-900 text-zinc-950"
+	class=" h-10 bg-neutral-700  rounded p-2 border-2 border-zinc-900 text-zinc-950"
 	name={name.split(' ')[0].toLowerCase()}
 	{placeholder}
 />
