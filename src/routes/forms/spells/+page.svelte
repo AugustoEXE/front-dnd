@@ -7,6 +7,7 @@
 	
 	const damageTypes = axios.get('http://localhost:8000/damage-types');
 	
+	console.info("ta aqui");
 	console.log(damageTypes);
 
 
@@ -59,7 +60,7 @@
 				<Input name="Dano" placeholder="Ex.: 1D6, 2D8" />
 			</div>
 
-			<div class="col-span-2 grid">
+			<div class=" grid">
 				<label for="" class=" text-left">Truque: </label>
 				<select
 					class="h-10 text-stone-200 bg-neutral-700 rounded p-2 border-2 border-zinc-900 "
@@ -74,6 +75,20 @@
 			</div>
 
 			<div class="col-span-2 grid">
+				<label for="" class=" text-left">Escola De Magia: </label>
+				<select
+					class="h-10 text-stone-200 bg-neutral-700 rounded p-2 border-2 border-zinc-900 "
+					name="tipo"
+					id=""
+				>
+					<select />
+					<option value="-1">Selecione...</option>
+					<option value="1">Sim</option>
+					<option value="2">Não</option>
+				</select>
+			</div>
+
+			<div class=" grid">
 				<Input name="Duração" />
 			</div>
 

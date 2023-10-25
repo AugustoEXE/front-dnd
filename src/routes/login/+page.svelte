@@ -4,6 +4,7 @@
 	import Lock from 'svelte-material-icons/Lock.svelte';
 	import Login from 'svelte-material-icons/Login.svelte';
 	import ErrorToast from '../../components/toasts/ErrorToast.svelte';
+	import {jwt} from '../../store'
 	import axios from 'axios';
 	let login: string, password: string, accept: boolean, error: string, visible: boolean;
 
@@ -16,6 +17,7 @@
 
 			try {
 				const userData = await axios.post('http://localhost:8000/login', loginData);
+				jwt.set(userData.data.authorization.token)
 				axios.defaults.headers.common['Authorization'] = `Bearer ${userData.data.authorization.token}`
 				window.location.replace('/home');
 			} catch (e) {
