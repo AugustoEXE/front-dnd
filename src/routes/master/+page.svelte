@@ -15,6 +15,8 @@ import armor from '$lib/assets/icons/armor.png'
 import school from '$lib/assets/icons/school.png'
 import skull from '$lib/assets/icons/skull.png'
 import cratureType from '$lib/assets/icons/cratureType.png'
+import { auth } from '../../scripts/auth';
+auth()
 </script>
 
 <div class="w-[98%] m-auto grid grid-cols-5 gap-5 pb-10">
@@ -23,22 +25,22 @@ import cratureType from '$lib/assets/icons/cratureType.png'
     </div>
 
     <div class="row-span-2 grid place-items-center bg-gradient-to-b from-zinc-900 via-zinc-900 to-red-500 hover:scale-105 hover:shadow-2xl transition">
-        <img src="{master}" alt="" class="invert scale-90">
+        <img src="{master}" alt="" class=" scale-90 invert">
         <p class="text-center text-3xl font-bold mb-20">Gerenciar Mesa</p>
     </div>
     
-    <MasterCard img={wizard} legend="Feitiço" route={'/forms/spells'}></MasterCard>
-    <MasterCard img={sword} legend="Arma" route={''}></MasterCard>
-    <MasterCard img={armor} legend="Armadura" route={''}></MasterCard>
-    <MasterCard img={goblin} legend="Raça" route={''}></MasterCard>
-    <MasterCard img={dragon} legend="Criatura" route={''}></MasterCard>
-    <MasterCard img={proficiency} legend="Proficiencia" route={''}></MasterCard>
-    <MasterCard img={classe} legend="Classe" route={''}></MasterCard>
-    <MasterCard img={potion} legend="Item" route={''}></MasterCard>
-    <MasterCard img={runes} legend="Lingua" route={''}></MasterCard>
-    <MasterCard img={rarity} legend="Raridade" route={''}></MasterCard>
-    <MasterCard img={school} legend="Escola de Magia" route={''}></MasterCard>
-    <MasterCard img={skull} legend="Tipo de dado" route={''}></MasterCard>
-    <MasterCard img={cratureType} legend="Tipo de Criatura" route={''}></MasterCard>
+    <MasterCard img={wizard} legend="Feitiços" route={'/list/spells'}></MasterCard>
+    <MasterCard img={sword} legend="Armas" route={'/list/weapons'}></MasterCard>
+    <MasterCard img={armor} legend="Armaduras" route={''}></MasterCard>
+    <MasterCard img={goblin} legend="Raças" route={''}></MasterCard>
+    <MasterCard img={dragon} legend="Criaturas" route={''}></MasterCard>
+    <MasterCard img={proficiency} legend="Proficiencias" route={''}></MasterCard>
+    <MasterCard img={classe} legend="Classes" route={''}></MasterCard>
+    <MasterCard img={potion} legend="Items" route={'/list/items'}></MasterCard>
+    <MasterCard img={runes} legend="Linguas" route={'/list/languages'}></MasterCard>
+    <MasterCard img={rarity} legend="Raridades" route={'/list/rarities'}></MasterCard>
+    <MasterCard img={school} legend="Escolas de Magia" route={'/list/magic-school'}></MasterCard>
+    <MasterCard img={skull} legend="Tipos de dano" route={'/list/damage-types'}></MasterCard>
+    <MasterCard img={cratureType} legend="Tipos de Criatura" route={'/list/creature-types'}></MasterCard>
     
 </div>

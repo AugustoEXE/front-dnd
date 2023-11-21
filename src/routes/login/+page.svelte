@@ -4,11 +4,13 @@
 	import Lock from 'svelte-material-icons/Lock.svelte';
 	import Login from 'svelte-material-icons/Login.svelte';
 	import ErrorToast from '../../components/toasts/ErrorToast.svelte';
-	import {jwt} from '../../store'
 	import axios from 'axios';
+	import { browser } from '$app/environment';
 	let login: string, password: string, accept: boolean, error: string, visible: boolean;
 
-	async function handleSubmmit(): Promise<void> {
+
+	async function handleSubmmit(): Promise<void> 
+		{
 		if (accept) {
 			const loginData = {
 				email: login,
@@ -17,11 +19,19 @@
 
 			try {
 				const userData = await axios.post('http://localhost:8000/login', loginData);
-				jwt.set(userData.data.authorization.token)
-				axios.defaults.headers.common['Authorization'] = `Bearer ${userData.data.authorization.token}`
+				const jwt = userData.data.authorization.token
+				const user = {id: userData.data.user.id, name:userData.data.user.name }
+				if(browser){
+					localStorage.setItem('jwt', jwt)
+					localStorage.setItem('userData', JSON.stringify(user))
+					axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`
+				}
+
+				
 				window.location.replace('/home');
-			} catch (e) {
-				error = 'erro no login';
+
+			} catch (e: any) {
+				error = e;
 				visible = true;
 			}
 		} else {
@@ -46,7 +56,7 @@
 				>
 				<input
 					type="text"
-					class="w-2/3 bg-stone-200 rounded p-2 border-2 border-zinc-900 text-zinc-950"
+					class="w-2/3 bg-neutral-700 rounded p-2 border-2 border-neutral-900 text-neutral-300"
 					bind:value={login}
 				/>
 				<label for="" class="w-2/3 mt-5 text-left m-0 text-"
@@ -54,7 +64,7 @@
 				>
 				<input
 					type="password"
-					class="w-2/3 bg-stone-200 rounded p-2 border-2 border-zinc-900 text-zinc-950"
+					class="w-2/3 bg-neutral-700 rounded p-2 border-2 border-neutral-900 text-neutral-300"
 					bind:value={password}
 				/>
 

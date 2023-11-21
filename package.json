@@ -16,9 +16,11 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@types/cookie": "^0.5.1",
+		"@types/jsonwebtoken": "^9.0.4",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
 		"autoprefixer": "^10.4.15",
+		"daisyui": "^4.1.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
@@ -35,6 +37,8 @@
 	"type": "module",
 	"dependencies": {
 		"axios": "^1.5.1",
+		"dotenv": "^16.3.1",
+		"jsonwebtoken": "^9.0.2",
 		"svelte-material-icons": "^3.0.5"
 	}
 }
